@@ -1,9 +1,8 @@
 * 监控webhook的POST请求
 
 参考
- https://www.nodebeginner.org/index-zh-cn.html#a-full-blown-web-application-with-nodejs Node入门
-
-http://jerryzou.com/posts/webhook-practice/ Webhook 实践 —— 自动部署
+[[https://www.nodebeginner.org/index-zh-cn.html#a-full-blown-web-application-with-nodejs][Node入门]]
+[[http://jerryzou.com/posts/webhook-practice/][Webhook 实践 —— 自动部署]]
 
 Create at 2017年 12月 25日 星期一 10:36:14 CST
 
