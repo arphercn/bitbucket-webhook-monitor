@@ -1,8 +1,27 @@
 * 监控webhook的POST请求
+** 安装
+: sudo apt install child_process
 
-参考
+运行
+: nohup node server.js > server.log 2>&1 &
+** 特点
+监控POST请求，执行脚本
+鉴别master和develop分支提交
+记录监控日志
+
+** 使用
+在本地可以执行
+: git push origin master
+: git push origin develop
+
+提交远程命令发出后，bitbucket发送POST请求[[https://confluence.atlassian.com/bitbucketserver/post-service-webhook-for-bitbucket-server-776640367.html][JSON PAYLOAD]]，nodejs server监控到body中含有 =master= 或 =develop= 值时，执行相应的shell拉取相应远程资源到本地
+
+ps 当提交远程没有的版本时会报错，暂未处理
+需要查看bitbucket的POST的JSON格式再处理
+** 参考
 [[https://www.nodebeginner.org/index-zh-cn.html#a-full-blown-web-application-with-nodejs][Node入门]]
 [[http://jerryzou.com/posts/webhook-practice/][Webhook 实践 —— 自动部署]]
+[[https://gist.github.com/umidjons/88fa0041e6dd583491dd83662d007d2c][Client/Server POST request example in pure Node.js]]
 
 Create at 2017年 12月 25日 星期一 10:36:14 CST
 

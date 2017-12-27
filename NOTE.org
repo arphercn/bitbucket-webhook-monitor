@@ -1,0 +1,32 @@
+* 打印POST参数步骤 
+
+首先遍历获取body内容
+#+BEGIN_SRC js
+req.on('data', function(data) {
+    body += data
+    // console.log(data) // <Buffer 7b 0a 09 22 6e 61 6d 65 22 3a 22 6d 61 73 74 65 72 22 0a 7d>
+})
+#+END_SRC
+然后在监听 =end= 事件时，获取总的body内容
+#+BEGIN_SRC js
+req.on('end', function () {
+    // var post = querystring.parse(body);
+    var obj = JSON.parse(body)
+    if (obj.push.changes[0].old) {
+        name = obj.push.changes[0].old.name
+    }
+    // console.log(body);
+    res.end(name);
+});
+#+END_SRC
+
+* fixbugs
+** Unexpected end of JSON input
+最有可能是回傳回來的 data 不是正確的 json 格式，造成解析錯誤
+
+** 访问连接不断开
+对每次访问需要最后关闭连接，使用 =res.end('done');=
+
+** 时间统计一直不变
+作用域的关系
+time统计时间的值需要定义在每次 =server.on('request', function(req, res) {})= 内，
