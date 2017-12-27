@@ -19,9 +19,11 @@
 ps 当提交远程没有的版本时会报错，暂未处理
 需要查看bitbucket的POST的JSON格式再处理
 ** 参考
-[[https://www.nodebeginner.org/index-zh-cn.html#a-full-blown-web-application-with-nodejs][Node入门]]
-[[http://jerryzou.com/posts/webhook-practice/][Webhook 实践 —— 自动部署]]
-[[https://gist.github.com/umidjons/88fa0041e6dd583491dd83662d007d2c][Client/Server POST request example in pure Node.js]]
+[[https://www.nodebeginner.org/index-zh-cn.html#a-full-blown-web-application-with-nodejs][Node入门]] 
+[[http://jerryzou.com/posts/webhook-practice/][Webhook 实践 —— 自动部署]] 
+[[https://gist.github.com/umidjons/88fa0041e6dd583491dd83662d007d2c][Client/Server POST request example in pure Node.js]] 
 
 Create at 2017年 12月 25日 星期一 10:36:14 CST
-
+change log
+<2017-12-27 三> 添加监控master,develop功能，输出日志
+ps 待完成 ，笔记添加bitbucket POST的json格式，日志时间时区转化
